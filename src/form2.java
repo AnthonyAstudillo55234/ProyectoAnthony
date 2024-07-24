@@ -37,6 +37,9 @@ public class form2 extends JFrame {
                     ResultSet rs = ps.executeQuery();
                     if(rs.next()) {
                         mensaje.setText("Inicio de Sesion Exitoso");
+                        form5 nuevaVentana = new form5();
+                        nuevaVentana.setVisible(true);
+                        setVisible(false);
                     }else {
                         mensaje.setText("Datos Incorrectos");
                     }
