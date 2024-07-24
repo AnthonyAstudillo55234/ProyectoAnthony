@@ -4,7 +4,7 @@ public class productos {
     float precio;
     int stock;
 
-    public productos(String id_pro, String text, int pr, float stock_produc) {
+    public productos() {
     }
 
     public productos(String id_producto, String nombre, float precio, int stock) {

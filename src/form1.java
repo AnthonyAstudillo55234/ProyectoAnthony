@@ -7,9 +7,10 @@ public class form1 extends JFrame{
     private JPanel mainPanel;
     private JButton CLIENTEButton;
     private JButton ADMINISTRADORButton;
+    private JButton CERRARButton;
 
     public form1() {
-        setTitle("Seleccion");
+        setTitle("Zapato Feliz Inicio");
         setContentPane(mainPanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setPreferredSize(new Dimension(600, 500));
@@ -28,6 +29,12 @@ public class form1 extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 new form3();
                 setVisible(false);
+            }
+        });
+        CERRARButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
             }
         });
     }
