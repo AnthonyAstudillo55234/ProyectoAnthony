@@ -28,9 +28,9 @@ public class form8 extends JFrame {
                 if(id.getText().equals("")){
                     mensaje.setText("Ingrese un ID");
                 }
-                String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10720950";
-                String username = "sql10720950";
-                String password = "9IN3lSHIrx";
+                String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10722403";
+                String username = "sql10722403";
+                String password = "4gdmDFBIMd";
                 String query ="select * from zapatos where id_producto = ?";
                 try (Connection con = DriverManager.getConnection(url, username, password)) {
                     PreparedStatement ps = con.prepareStatement(query);

@@ -24,12 +24,12 @@ public class form3 extends JFrame {
         INGRESARButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10720950";
-                String username = "sql10720950";
-                String password = "9IN3lSHIrx";
+                String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10722403";
+                String username = "sql10722403";
+                String password = "4gdmDFBIMd";
                 Connection conn = null;
                 PreparedStatement ps = null;
-                String query = "select * from clientes where nombre = ? and contrasenia = ?";
+                String query = "select * from clientes where cedula = ? and contrasenia = ?";
                 try {
                     conn = DriverManager.getConnection(url,username,password);
                     ps = conn.prepareStatement(query);
@@ -38,6 +38,9 @@ public class form3 extends JFrame {
                     ResultSet rs = ps.executeQuery();
                     if(rs.next()) {
                         mensaje.setText("Inicio de Sesion Exitoso");
+                        form10 menuClient = new form10();
+                        menuClient.setVisible(true);
+                        setVisible(false);
                     }else {
                         mensaje.setText("Datos Incorrectos");
                     }
