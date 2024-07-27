@@ -21,7 +21,7 @@ public class form9 extends JFrame {
         setSize(600, 400);
         setLocationRelativeTo(null);
 
-        tableModel = new DefaultTableModel(new Object[]{"Stock", "Nombre", "Acción"}, 0) {
+        tableModel = new DefaultTableModel(new Object[]{"Stock", "Nombre", "Precio","Acción"}, 0) {
             @Override
             public boolean isCellEditable(int row, int column) {
                 return column == 2;
@@ -66,7 +66,7 @@ public class form9 extends JFrame {
         String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10722403";
         String username = "sql10722403";
         String password = "4gdmDFBIMd";
-        String query = "SELECT stock, nombre FROM zapatos";
+        String query = "SELECT stock, nombre, precio FROM zapatos";
 
         try (Connection con = DriverManager.getConnection(url, username, password)) {
             Statement stmt = con.createStatement();
@@ -77,6 +77,7 @@ public class form9 extends JFrame {
                 Vector<Object> row = new Vector<>();
                 row.add(rs.getInt("stock"));
                 row.add(rs.getString("nombre"));
+                row.add(rs.getString("precio"));
                 row.add("Comprar");
                 tableModel.addRow(row);
             }
