@@ -1,7 +1,7 @@
 import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
-import javax.swing.table.TableCellEditor;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,14 +21,24 @@ public class form9 extends JFrame {
         setSize(600, 400);
         setLocationRelativeTo(null);
 
-        tableModel = new DefaultTableModel(new Object[]{"Stock", "Nombre", "Precio","Acción"}, 0) {
+        tableModel = new DefaultTableModel(new Object[]{"Stock", "Nombre", "Precio", "Imagen", "Acción"}, 0) {
             @Override
             public boolean isCellEditable(int row, int column) {
-                return column == 2;
+                return column == 4;
+            }
+
+            @Override
+            public Class<?> getColumnClass(int columnIndex) {
+                if (columnIndex == 3) {
+                    return ImageIcon.class;
+                }
+                return super.getColumnClass(columnIndex);
             }
         };
 
         table = new JTable(tableModel);
+        table.setRowHeight(100); // Ajustar la altura de las filas a 100 píxeles
+        table.getColumn("Imagen").setCellRenderer(new ImageRenderer());
         table.getColumn("Acción").setCellRenderer(new ButtonRenderer());
         table.getColumn("Acción").setCellEditor(new ButtonEditor(new JCheckBox(), table));
 
@@ -66,7 +76,7 @@ public class form9 extends JFrame {
         String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10722403";
         String username = "sql10722403";
         String password = "4gdmDFBIMd";
-        String query = "SELECT stock, nombre, precio FROM zapatos";
+        String query = "SELECT stock, nombre, precio, image_path FROM zapatos";
 
         try (Connection con = DriverManager.getConnection(url, username, password)) {
             Statement stmt = con.createStatement();
@@ -78,6 +88,11 @@ public class form9 extends JFrame {
                 row.add(rs.getInt("stock"));
                 row.add(rs.getString("nombre"));
                 row.add(rs.getString("precio"));
+
+                // Load image
+                String imagePath = "C:\\Users\\User\\IdeaProjects\\ProyectoAnthony\\src\\img\\" + rs.getString("image_path");
+                ImageIcon imageIcon = new ImageIcon(new ImageIcon(imagePath).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
+                row.add(imageIcon);
                 row.add("Comprar");
                 tableModel.addRow(row);
             }
@@ -93,6 +108,19 @@ public class form9 extends JFrame {
                 new form9().setVisible(true);
             }
         });
+    }
+}
+
+class ImageRenderer extends DefaultTableCellRenderer {
+    @Override
+    public Component getTableCellRendererComponent(JTable table, Object value,
+                                                   boolean isSelected, boolean hasFocus, int row, int column) {
+        if (value instanceof ImageIcon) {
+            JLabel label = new JLabel((ImageIcon) value);
+            label.setHorizontalAlignment(JLabel.CENTER); // Centrar la imagen
+            return label;
+        }
+        return super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
     }
 }
 
