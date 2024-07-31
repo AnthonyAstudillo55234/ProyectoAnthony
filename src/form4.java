@@ -47,7 +47,8 @@ public class form4 extends JFrame {
                     ps.setString(4, telefono.getText());
                     ps.setString(5, correo.getText());
                     ps.setString(6, edad.getText());
-                    ps.setString(7, contrasenia.getText());
+                    String hashedPassword = encriptado.generateHash(contrasenia.getText());
+                    ps.setString(7, hashedPassword);
                     mensaje.setText("Datos Registrados");
                     ps.executeUpdate();
                 }catch (SQLException e1){
