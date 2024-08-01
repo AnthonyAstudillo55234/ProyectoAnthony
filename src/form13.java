@@ -24,11 +24,11 @@ public class form13 {
 
     public void addItem(String nombre, int cantidad, float precio) {
         if (items == null) {
-            items = new ArrayList<>();  // Inicializa en caso de que sea nulo
+            items = new ArrayList<>();
         }
-        items.add(new CartItem(nombre, cantidad));
+        items.add(new CartItem(nombre, cantidad, precio));
         carrito.put(nombre, carrito.getOrDefault(nombre, 0) + cantidad);
-        // Asume que el precio es conocido y se debe actualizar en el mapa de precios
+        precios.put(nombre, precio);
     }
 
     public List<CartItem> getItems() {
@@ -63,7 +63,7 @@ public class form13 {
         private int cantidad;
         private float precio;
 
-        public CartItem(String nombre, int cantidad) {
+        public CartItem(String nombre, int cantidad, float precio) {
             this.nombre = nombre;
             this.cantidad = cantidad;
             this.precio = precio;

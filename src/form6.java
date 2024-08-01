@@ -60,7 +60,7 @@ public class form6 extends JFrame {
 
                 // Save the image to a specific directory
                 File imageFile = new File(imagePath.getText());
-                File destinationFile = new File("C:\\Users\\User\\IdeaProjects\\ProyectoAnthony\\src\\img\\" + imageFile.getName());
+                File destinationFile = new File("C:\\Users\\POO\\IdeaProjects\\ProyectoAnthony\\src\\img\\" + imageFile.getName());
                 try {
                     Files.copy(imageFile.toPath(), destinationFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
                 } catch (Exception ex) {

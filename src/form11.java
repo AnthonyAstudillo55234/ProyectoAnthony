@@ -74,7 +74,7 @@ public class form11 extends JDialog {
         try {
             Document pdfDocumento = new Document();
             String ruta = System.getProperty("user.home");
-            String directorio = ruta + File.separator + "Desktop";
+            String directorio = ruta + File.separator + "PDF";
             File carpeta = new File(directorio);
             if (!carpeta.exists()) {
                 carpeta.mkdirs();
@@ -98,14 +98,13 @@ public class form11 extends JDialog {
             for (form13.CartItem item : items) {
                 String nombre = item.getNombre();
                 int cantidadItem = item.getCantidad();
-                Float precioFloat = precio; // Obtener el precio como Float
+                Float precioFloat = item.getPrecio(); // Obtener el precio como Float
 
                 if (precioFloat == null) {
                     precioFloat = 0.0f;  // Asignar un valor predeterminado si el precio es null
                 }
 
-                float precio = precioFloat;  // Convertir a primitivo
-                float subtotal = cantidadItem * precio;
+                float subtotal = cantidadItem * precioFloat;
                 total += subtotal;
 
                 pdfDocumento.add(new Paragraph("Nombre: " + nombre));
@@ -121,9 +120,5 @@ public class form11 extends JDialog {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    private String calcularTotal(int cantidad) {
-        return String.format("%.2f", cantidad * precio);
     }
 }

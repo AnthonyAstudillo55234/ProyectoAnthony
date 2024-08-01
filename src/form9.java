@@ -90,7 +90,7 @@ public class form9 extends JFrame {
                 row.add(rs.getString("precio"));
 
                 // Load image
-                String imagePath = "C:\\Users\\User\\IdeaProjects\\ProyectoAnthony\\src\\img\\" + rs.getString("image_path");
+                String imagePath = "C:\\Users\\POO\\IdeaProjects\\ProyectoAnthony\\src\\img\\" + rs.getString("image_path");
                 ImageIcon imageIcon = new ImageIcon(new ImageIcon(imagePath).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
                 row.add(imageIcon);
                 row.add("Comprar");
@@ -168,7 +168,6 @@ class ButtonEditor extends DefaultCellEditor {
     @Override
     public Object getCellEditorValue() {
         if (isPushed) {
-            // Actions when button is pressed
             int row = table.getEditingRow();
             String nombre = (String) table.getValueAt(row, 1);
             int stock = (int) table.getValueAt(row, 0);

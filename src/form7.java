@@ -42,9 +42,6 @@ public class form7 extends JFrame {
                     } else {
                         mensaje.setText("No se encontró un producto con el ID especificado");
                     }
-                } catch (NumberFormatException ex) {
-                    mensaje.setText("ID no válido. Debe ser un número entero.");
-                    ex.printStackTrace();
                 } catch (SQLException ex) {
                     mensaje.setText("Error al eliminar el producto.");
                     ex.printStackTrace();
