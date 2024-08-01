@@ -172,7 +172,8 @@ class ButtonEditor extends DefaultCellEditor {
             int row = table.getEditingRow();
             String nombre = (String) table.getValueAt(row, 1);
             int stock = (int) table.getValueAt(row, 0);
-            new form11(null, nombre, stock);
+            float precio = Float.parseFloat((String) table.getValueAt(row, 2));
+            new form11(null, nombre, stock, precio);
         }
         isPushed = false;
         return label;

@@ -33,8 +33,7 @@ public class form2 extends JFrame {
                     conn = DriverManager.getConnection(url,username,password);
                     ps = conn.prepareStatement(query);
                     ps.setString(1,usuario.getText());
-                    String hashedPassword = encriptado.generateHash(contrasenia.getText());
-                    ps.setString(2,hashedPassword);
+                    ps.setString(2,contrasenia.getText());
                     ResultSet rs = ps.executeQuery();
                     if(rs.next()) {
                         mensaje.setText("Inicio de Sesion Exitoso");
