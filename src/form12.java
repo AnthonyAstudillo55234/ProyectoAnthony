@@ -1,5 +1,7 @@
 import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,12 +29,35 @@ public class form12 extends JDialog {
         };
 
         table = new JTable(tableModel);
+        table.setBackground(Color.LIGHT_GRAY); // Cambiar color de fondo de la tabla
+        table.setFont(new Font("Arial black", Font.PLAIN, 12)); // Cambiar fuente y tamaño de la letra de la tabla
+        table.setRowHeight(30); // Ajustar la altura de las filas
+
+        JTableHeader header = table.getTableHeader();
+        header.setFont(new Font("Arial black", Font.BOLD, 14)); // Cambiar tamaño y tipo de letra de los encabezados
+        header.setForeground(Color.black);
+
+        // Cambiar el color y la fuente de las celdas de la tabla
+        DefaultTableCellRenderer cellRenderer = new DefaultTableCellRenderer();
+        cellRenderer.setHorizontalAlignment(JLabel.CENTER); // Centrar texto en celdas
+        cellRenderer.setForeground(Color.BLACK); // Cambiar color de la letra en las celdas
+        cellRenderer.setFont(new Font("Arial", Font.PLAIN, 14)); // Cambiar fuente y tamaño de la letra en las celdas
+        table.setDefaultRenderer(Object.class, cellRenderer);
+
         JScrollPane scrollPane = new JScrollPane(table);
         add(scrollPane, BorderLayout.CENTER);
 
         JPanel buttonPanel = new JPanel();
         buyButton = new JButton("Comprar");
+        buyButton.setFont(new Font("Arial", Font.BOLD, 16)); // Cambiar tamaño y tipo de letra del botón
+        buyButton.setForeground(Color.WHITE); // Cambiar color de la letra del botón
+        buyButton.setBackground(Color.blue); // Cambiar color de fondo del botón
+
         cancelButton = new JButton("Cancelar");
+        cancelButton.setFont(new Font("Arial", Font.BOLD, 16)); // Cambiar tamaño y tipo de letra del botón
+        cancelButton.setForeground(Color.WHITE); // Cambiar color de la letra del botón
+        cancelButton.setBackground(Color.RED); // Cambiar color de fondo del botón
+
         buttonPanel.add(buyButton);
         buttonPanel.add(cancelButton);
         add(buttonPanel, BorderLayout.SOUTH);
@@ -63,9 +88,9 @@ public class form12 extends JDialog {
     }
 
     private void realizarCompra() {
-        String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10722403";
-        String username = "sql10722403";
-        String password = "4gdmDFBIMd";
+        String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10723680";
+        String username = "sql10723680";
+        String password = "uNjR5yDxj2";
 
         try (Connection con = DriverManager.getConnection(url, username, password)) {
             for (form13.CartItem item : form13.getInstance().getItems()) {

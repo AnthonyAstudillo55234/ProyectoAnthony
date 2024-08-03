@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import com.itextpdf.text.*;
@@ -26,12 +27,32 @@ public class form11 extends JDialog {
         this.stock = stock;
         this.precio = precio;
 
+        // Configuración de las etiquetas
         nombreLabel = new JLabel("Producto: " + nombre);
-        stockLabel = new JLabel("Stock Disponible: " + stock);
-        cantidadField = new JTextField(5);
-        addButton = new JButton("Añadir");
-        cancelButton = new JButton("Cancelar");
+        nombreLabel.setFont(new Font("Arial black", Font.BOLD, 12)); // Cambiar la fuente y tamaño
+        nombreLabel.setForeground(Color.black); // Cambiar el color de la letra
 
+        stockLabel = new JLabel("Stock Disponible: " + stock);
+        stockLabel.setFont(new Font("Arial black", Font.PLAIN, 12)); // Cambiar la fuente y tamaño
+        stockLabel.setForeground(Color.black); // Cambiar el color de la letra
+
+        // Configuración del campo de texto
+        cantidadField = new JTextField(5);
+        cantidadField.setFont(new Font("Arial black", Font.PLAIN, 12)); // Cambiar la fuente y tamaño
+        cantidadField.setForeground(Color.BLACK); // Cambiar el color de la letra
+
+        // Configuración de los botones
+        addButton = new JButton("Añadir");
+        addButton.setFont(new Font("Arial black", Font.BOLD, 14)); // Cambiar la fuente y tamaño
+        addButton.setForeground(Color.WHITE); // Cambiar el color de la letra
+        addButton.setBackground(Color.blue); // Cambiar el color de fondo
+
+        cancelButton = new JButton("Cancelar");
+        cancelButton.setFont(new Font("Arial", Font.BOLD, 14)); // Cambiar la fuente y tamaño
+        cancelButton.setForeground(Color.WHITE); // Cambiar el color de la letra
+        cancelButton.setBackground(Color.RED); // Cambiar el color de fondo
+
+        // Añadir la acción de los botones
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -57,13 +78,17 @@ public class form11 extends JDialog {
             }
         });
 
-        setLayout(new GridLayout(4, 2));
+        // Configuración del layout
+        setLayout(new GridLayout(4, 2, 10, 10)); // Espaciado entre los elementos
         add(nombreLabel);
         add(stockLabel);
         add(new JLabel("Cantidad:"));
+        cantidadField.setFont(new Font("Arial black", Font.PLAIN, 12));
         add(cantidadField);
         add(addButton);
         add(cancelButton);
+
+        getContentPane().setBackground(Color.LIGHT_GRAY); // Cambiar color de fondo del panel
 
         pack();
         setLocationRelativeTo(parent);
@@ -109,11 +134,11 @@ public class form11 extends JDialog {
 
                 pdfDocumento.add(new Paragraph("Nombre: " + nombre));
                 pdfDocumento.add(new Paragraph("Cantidad: " + cantidadItem));
-                pdfDocumento.add(new Paragraph("Subtotal: " + String.format("%.2f", subtotal)));
+                pdfDocumento.add(new Paragraph("Subtotal: $" + String.format("%.2f", subtotal)));
                 pdfDocumento.add(Chunk.NEWLINE);
             }
 
-            pdfDocumento.add(new Paragraph("Total: " + String.format("%.2f", total)));
+            pdfDocumento.add(new Paragraph("Total: $" + String.format("%.2f", total)));
             pdfDocumento.close();
 
             System.out.println("PDF creado en la ruta: " + archivoPDF.getAbsolutePath());

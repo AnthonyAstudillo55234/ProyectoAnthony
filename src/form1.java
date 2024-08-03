@@ -10,7 +10,7 @@ public class form1 extends JFrame{
     private JButton CERRARButton;
 
     public form1() {
-        setTitle("Zapato Feliz Inicio");
+        setTitle("Zapatomart Inicio");
         setContentPane(mainPanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setPreferredSize(new Dimension(600, 500));

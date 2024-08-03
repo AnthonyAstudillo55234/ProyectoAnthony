@@ -1,6 +1,7 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 import javax.swing.table.TableCellRenderer;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -38,6 +39,25 @@ public class form9 extends JFrame {
 
         table = new JTable(tableModel);
         table.setRowHeight(100); // Ajustar la altura de las filas a 100 píxeles
+        table.setBackground(Color.lightGray); // Cambiar color de fondo de la tabla
+
+        // Cambiar la fuente y color de los encabezados de la tabla
+        JTableHeader header = table.getTableHeader();
+        header.setFont(new Font("Arial black", Font.BOLD, 14)); // Cambiar tamaño y tipo de letra de los encabezados
+        header.setForeground(Color.black); // Cambiar color de la letra de los encabezados
+
+        // Cambiar la fuente de las celdas de la tabla
+        DefaultTableCellRenderer cellRenderer = new DefaultTableCellRenderer() {
+            @Override
+            public Component getTableCellRendererComponent(JTable table, Object value,
+                                                           boolean isSelected, boolean hasFocus, int row, int column) {
+                Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+                c.setFont(new Font("Arial black", Font.PLAIN, 12)); // Cambiar tamaño y tipo de letra
+                c.setForeground(Color.BLACK); // Cambiar color de letra
+                return c;
+            }
+        };
+        table.setDefaultRenderer(Object.class, cellRenderer);
         table.getColumn("Imagen").setCellRenderer(new ImageRenderer());
         table.getColumn("Acción").setCellRenderer(new ButtonRenderer());
         table.getColumn("Acción").setCellEditor(new ButtonEditor(new JCheckBox(), table));
@@ -46,6 +66,9 @@ public class form9 extends JFrame {
         add(scrollPane, BorderLayout.CENTER);
 
         comprarButton = new JButton("Ver Carrito");
+        comprarButton.setFont(new Font("Arial", Font.BOLD, 16)); // Cambiar tamaño y tipo de letra del botón
+        comprarButton.setForeground(Color.WHITE); // Cambiar color de la letra del botón
+        comprarButton.setBackground(Color.BLUE); // Cambiar color de fondo del botón
         comprarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -54,6 +77,9 @@ public class form9 extends JFrame {
         });
 
         regresarButton = new JButton("Regresar");
+        regresarButton.setFont(new Font("Arial", Font.BOLD, 16)); // Cambiar tamaño y tipo de letra del botón
+        regresarButton.setForeground(Color.WHITE); // Cambiar color de la letra del botón
+        regresarButton.setBackground(Color.RED); // Cambiar color de fondo del botón
         regresarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -73,9 +99,9 @@ public class form9 extends JFrame {
     }
 
     public void fetchProductData() {
-        String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10722403";
-        String username = "sql10722403";
-        String password = "4gdmDFBIMd";
+        String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10723680";
+        String username = "sql10723680";
+        String password = "uNjR5yDxj2";
         String query = "SELECT stock, nombre, precio, image_path FROM zapatos";
 
         try (Connection con = DriverManager.getConnection(url, username, password)) {
@@ -90,7 +116,7 @@ public class form9 extends JFrame {
                 row.add(rs.getString("precio"));
 
                 // Load image
-                String imagePath = "C:\\Users\\POO\\IdeaProjects\\ProyectoAnthony\\src\\img\\" + rs.getString("image_path");
+                String imagePath = "C:\\Users\\User\\IdeaProjects\\ProyectoAnthony\\src\\img\\" + rs.getString("image_path");
                 ImageIcon imageIcon = new ImageIcon(new ImageIcon(imagePath).getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
                 row.add(imageIcon);
                 row.add("Comprar");
@@ -127,6 +153,9 @@ class ImageRenderer extends DefaultTableCellRenderer {
 class ButtonRenderer extends JButton implements TableCellRenderer {
     public ButtonRenderer() {
         setOpaque(true);
+        setFont(new Font("Arial black", Font.BOLD, 14)); // Cambiar tamaño y tipo de letra del botón en la tabla
+        setForeground(Color.black); // Cambiar color de letra del botón
+        setBackground(Color.green); // Cambiar color de fondo del botón
     }
 
     @Override
@@ -148,6 +177,9 @@ class ButtonEditor extends DefaultCellEditor {
         this.table = table;
         button = new JButton();
         button.setOpaque(true);
+        button.setFont(new Font("Arial", Font.BOLD, 14)); // Cambiar tamaño y tipo de letra del botón en la tabla
+        button.setForeground(Color.WHITE); // Cambiar color de letra del botón
+        button.setBackground(Color.GREEN); // Cambiar color de fondo del botón
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -189,3 +221,4 @@ class ButtonEditor extends DefaultCellEditor {
         super.fireEditingStopped();
     }
 }
+

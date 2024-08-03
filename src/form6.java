@@ -60,7 +60,7 @@ public class form6 extends JFrame {
 
                 // Save the image to a specific directory
                 File imageFile = new File(imagePath.getText());
-                File destinationFile = new File("C:\\Users\\POO\\IdeaProjects\\ProyectoAnthony\\src\\img\\" + imageFile.getName());
+                File destinationFile = new File("C:\\Users\\User\\IdeaProjects\\ProyectoAnthony\\src\\img\\" + imageFile.getName());
                 try {
                     Files.copy(imageFile.toPath(), destinationFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
                 } catch (Exception ex) {
@@ -70,9 +70,9 @@ public class form6 extends JFrame {
                 }
 
                 productos produc = new productos(id.getText(), nombre.getText(), pr, stock_produc);
-                String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10722403";
-                String username = "sql10722403";
-                String password = "4gdmDFBIMd";
+                String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10723680";
+                String username = "sql10723680";
+                String password = "uNjR5yDxj2";
                 String query = "insert into zapatos (id_producto, nombre, precio, stock, image_path) values(?,?,?,?,?)";
                 try (Connection con = DriverManager.getConnection(url, username, password)) {
                     PreparedStatement ps = con.prepareStatement(query);

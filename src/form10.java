@@ -13,7 +13,7 @@ public class form10 extends JFrame {
         setTitle("Ingreso al Catalogo");
         setContentPane(mainPanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setPreferredSize(new Dimension(600, 200));
+        setPreferredSize(new Dimension(600, 300));
         pack();
         setVisible(true);
         setLocationRelativeTo(null);

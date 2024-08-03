@@ -9,12 +9,13 @@ public class form5 extends JFrame {
     private JButton ELIMINARPRODUCTOButton;
     private JButton BUSCARPRODUCTOButton;
     private JButton REGRESARButton;
+    private JButton ACTUALIZARSTOCKButton;
 
     public form5() {
         setTitle("Menu Administrador");
         setContentPane(mainPanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setPreferredSize(new Dimension(600, 400));
+        setPreferredSize(new Dimension(700, 400));
         pack();
         setVisible(true);
         setLocationRelativeTo(null);
@@ -43,6 +44,13 @@ public class form5 extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new form8();
+                setVisible(false);
+            }
+        });
+        ACTUALIZARSTOCKButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new form14();
                 setVisible(false);
             }
         });

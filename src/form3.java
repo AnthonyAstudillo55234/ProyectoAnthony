@@ -24,9 +24,9 @@ public class form3 extends JFrame {
         INGRESARButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10722403";
-                String username = "sql10722403";
-                String password = "4gdmDFBIMd";
+                String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10723680";
+                String username = "sql10723680";
+                String password = "uNjR5yDxj2";
                 Connection conn = null;
                 PreparedStatement ps = null;
                 String query = "select * from clientes where cedula = ? and contrasenia = ?";
