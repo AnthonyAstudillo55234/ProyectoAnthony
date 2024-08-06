@@ -26,6 +26,7 @@ public class form4 extends JFrame {
         pack();
         setVisible(true);
         setLocationRelativeTo(null);
+
         REGISTRARButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -33,30 +34,42 @@ public class form4 extends JFrame {
                     mensaje.setText("Llena todos los campos");
                     return;
                 }
-                int ed = Integer.parseInt(edad.getText());
-                cliente user = new cliente(cedula.getText(), nombre.getText(), apellido.getText(), telefono.getText(), correo.getText(), ed, contrasenia.getText());
+
                 String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10723680";
                 String username = "sql10723680";
                 String password = "uNjR5yDxj2";
-                String query ="insert into clientes (cedula, nombre, apellido, telefono, correo, edad, contrasenia) values(?,?,?,?,?,?,?)";
-                try(Connection con = DriverManager.getConnection(url, username, password)){
-                    PreparedStatement ps = con.prepareStatement(query);
-                    ps.setString(1, cedula.getText());
-                    ps.setString(2, nombre.getText());
-                    ps.setString(3, apellido.getText());
-                    ps.setString(4, telefono.getText());
-                    ps.setString(5, correo.getText());
-                    ps.setString(6, edad.getText());
-                    String hashedPassword = encriptado.generateHash(contrasenia.getText());
-                    ps.setString(7, hashedPassword);
-                    mensaje.setText("Datos Registrados");
-                    ps.executeUpdate();
-                }catch (SQLException e1){
+
+                try(Connection con = DriverManager.getConnection(url, username, password)) {
+                    // Verificar si ya existe un registro con la misma cédula
+                    String checkQuery = "SELECT * FROM clientes WHERE cedula = ?";
+                    PreparedStatement checkStmt = con.prepareStatement(checkQuery);
+                    checkStmt.setString(1, cedula.getText());
+                    ResultSet rs = checkStmt.executeQuery();
+
+                    if (rs.next()) {
+                        mensaje.setText("Este registro ya existe.");
+                    } else {
+                        // Si no existe, procedemos a registrar los datos
+                        String insertQuery = "INSERT INTO clientes (cedula, nombre, apellido, telefono, correo, edad, contrasenia) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                        PreparedStatement ps = con.prepareStatement(insertQuery);
+                        ps.setString(1, cedula.getText());
+                        ps.setString(2, nombre.getText());
+                        ps.setString(3, apellido.getText());
+                        ps.setString(4, telefono.getText());
+                        ps.setString(5, correo.getText());
+                        ps.setString(6, edad.getText());
+                        String hashedPassword = encriptado.generateHash(contrasenia.getText());
+                        ps.setString(7, hashedPassword);
+                        ps.executeUpdate();
+                        mensaje.setText("Datos Registrados");
+                    }
+                } catch (SQLException e1) {
                     e1.printStackTrace();
                     mensaje.setText("Datos no Registrados");
                 }
             }
         });
+
         REGRESARELINICIODEButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -64,6 +77,7 @@ public class form4 extends JFrame {
                 setVisible(false);
             }
         });
+
         BORRARButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -77,5 +91,9 @@ public class form4 extends JFrame {
                 mensaje.setText("");
             }
         });
+    }
+
+    public static void main(String[] args) {
+        new form4();
     }
 }
