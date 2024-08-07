@@ -27,5 +27,15 @@ Esta clase es para cuando el administrador ingrese los datos de un producto nuev
 ![image](https://github.com/user-attachments/assets/ee5fc971-2b10-48e4-b97f-c3b3e947897a)
 ![image](https://github.com/user-attachments/assets/a8fbf847-03b1-4faf-851b-4320703f0b58)
 
+- ## Form1 (Menu Principal del Programa):
+
+Esta ventana contiene tres botones:
+- Cliente: Al hacer clic en este botón, se abre la ventana correspondiente al (form3: Login Cliente) y se cierra la ventana actual.
+- Cerrar: Al hacer clic en este botón, el programa se cierra y todas sus funciones.
+- Adminirador: Al hacer clic en este botón, se abre la ventana correspondiente al (form2: Login Adminitrador) y se cierra la ventana actual.
+
+![image](https://github.com/user-attachments/assets/7dd5cb3d-51c7-4f1d-907b-e50c1a1b477c)
+![image](https://github.com/user-attachments/assets/eae0d08a-8b60-41af-b1be-71710788bd0a)
+
 
 
