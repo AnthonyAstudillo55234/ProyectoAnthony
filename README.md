@@ -99,7 +99,64 @@ Características:
 - Botón "REGRESAR": Regresa al formulario de login para administradores (form2).
 
 ![image](https://github.com/user-attachments/assets/a967ebba-ec53-4ab8-b3a1-dbb36c983f02)
+![image](https://github.com/user-attachments/assets/ee70ac93-e668-490d-8399-bca7c61779ca)
+![image](https://github.com/user-attachments/assets/61318620-08a1-4393-b9b7-d2c6a5619bf0)
 
+- ## Form 6 (Agregar Producto):
+
+En esta ventana se proporciona un formulario que permite a los administradores ingresar información sobre nuevos productos, incluido el ID del producto, el nombre, el precio, el stock disponible y la ruta de la imagen del producto. El formulario también le permite seleccionar una imagen del sistema de archivo y mostrarla.
+
+Características:
+
+- Campo de Texto para ID: Permite ingresar el ID único del producto.
+- Campo de Texto para Nombre: Permite ingresar el nombre del producto.
+- Campo de Texto para Precio: Permite ingresar el precio del producto en formato numérico.
+- Campo de Texto para Stock: Permite ingresar la cantidad disponible del producto.
+- Campo de Texto para Ruta de Imagen: Muestra la ruta de la imagen seleccionada.
+- Botón "SELECCIONAR IMAGEN": Abre un explorador de archivos para seleccionar una imagen del producto.
+- Botón "AGREGAR": Inserta el producto en la base de datos.
+- Botón "BORRAR": Limpia todos los campos del formulario.
+- Botón "REGRESAR": Vuelve al menú principal de administrador (form5).
+
+![image](https://github.com/user-attachments/assets/8ca3b0ac-d6e6-4d74-9283-53cac05bc6a6)
+![image](https://github.com/user-attachments/assets/012ea326-8949-428f-bf33-13304dcb0de5)
+![image](https://github.com/user-attachments/assets/389638a9-afbe-40c3-ba03-2c490f9abddd)
+![image](https://github.com/user-attachments/assets/fd645bbb-f42f-4453-9673-b1b987c3e4cb)
+![image](https://github.com/user-attachments/assets/5380356d-bde1-4516-b8bb-647d7fd1ba0e)
+![image](https://github.com/user-attachments/assets/327d4e40-b949-4e70-8f6f-78b35234ce87)
+
+- ## Form 7 (Eliminar Producto):
+
+En esta ventana se proporciona un formulario que permite a los administradores ingresar el ID de un producto que desean eliminar. La aplicación verifica si el ID ingresado corresponde a un producto existente en la base de datos y elimina el producto si es encontrado.
+
+Características:
+
+- Campo de Texto para ID: Permite ingresar el ID del producto que se desea eliminar.
+- Botón "ELIMINAR": Ejecuta la acción de eliminar el producto con el ID especificado.
+- Botón "REGRESAR": Vuelve al menú principal de administrador (form5).
+- Etiqueta Mensaje: Muestra mensajes de éxito o error relacionados con la eliminación del producto.
+
+![image](https://github.com/user-attachments/assets/3132b0d7-2768-4d07-a87d-3c4d95e26152)
+![image](https://github.com/user-attachments/assets/2b73d85d-a178-44c0-9e7b-c5938d4e17b9)
+![image](https://github.com/user-attachments/assets/85e6f28f-e503-43ee-af9f-6cd55c34646c)
+
+- ## Form 8 (Buscar Producto):
+
+En esta ventana se proporciona un formulario que permite a los administradores ingresar el ID de un producto para buscar sus detalles en la base de datos. La aplicación muestra el nombre, el precio y el stock del producto si el ID ingresado es válido.
+
+Características:
+
+- Campo de Texto para ID: Permite ingresar el ID del producto que se desea buscar.
+- Botón "BUSCAR": Ejecuta la acción de buscar el producto con el ID especificado.
+- Botón "REGRESAR": Vuelve al menú principal de administrador (form5).
+- Etiquetas para mostrar información: Muestra el nombre, el precio y el stock del producto encontrado.
+- Etiqueta Mensaje: Muestra mensajes relacionados con la búsqueda del producto, como éxito o error.
+
+![image](https://github.com/user-attachments/assets/60ff16e9-c69f-4b81-a228-ac55dd367d65)
+![image](https://github.com/user-attachments/assets/b630452c-cf77-4bc6-9fe1-65b73dce6fef)
+![image](https://github.com/user-attachments/assets/d5f8bccf-0e64-479e-ba8e-a09f16ab2dfb)
+
+- ## Form14 (Actualizar Stock de un Producto):
 
 
 
