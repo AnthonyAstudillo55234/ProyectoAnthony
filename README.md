@@ -30,12 +30,27 @@ Esta clase es para cuando el administrador ingrese los datos de un producto nuev
 - ## Form1 (Menu Principal del Programa):
 
 Esta ventana contiene tres botones:
-- Cliente: Al hacer clic en este botón, se abre la ventana correspondiente al (form3: Login Cliente) y se cierra la ventana actual.
-- Cerrar: Al hacer clic en este botón, el programa se cierra y todas sus funciones.
 - Adminirador: Al hacer clic en este botón, se abre la ventana correspondiente al (form2: Login Adminitrador) y se cierra la ventana actual.
+- Cerrar: Al hacer clic en este botón, el programa se cierra y todas sus funciones.
+- Cliente: Al hacer clic en este botón, se abre la ventana correspondiente al (form3: Login Cliente) y se cierra la ventana actual.
 
 ![image](https://github.com/user-attachments/assets/7dd5cb3d-51c7-4f1d-907b-e50c1a1b477c)
 ![image](https://github.com/user-attachments/assets/eae0d08a-8b60-41af-b1be-71710788bd0a)
+
+- ## Form2 (Login Administrador):
+
+Es una ventana para que los administradores puedan iniciar sesión en el sistema. La aplicación verifica las credenciales ingresadas consultando una base de datos MySQL remota.
+
+Características principales
+
+- Campo de usuario: Un campo de texto para que el administrador ingrese su nombre de usuario.
+- Campo de contraseña: Un campo de texto para que el administrador ingrese su contraseña.
+- Botón de Ingresar: Al presionarlo, la aplicación verifica las credenciales contra la base de datos.
+- Botón de Regresar: Permite al usuario volver al formulario de inicio (form1: Menu Principal del Programa).
+
+![image](https://github.com/user-attachments/assets/278cbbf7-cc9d-478d-9fa6-e559dfcbec7e)
+![image](https://github.com/user-attachments/assets/0d130622-45a7-49c6-a4c3-3ac625a6fb76)
+![image](https://github.com/user-attachments/assets/49d9d17c-5537-4811-91cb-d69c6f59e081)
 
 
 
