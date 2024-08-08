@@ -60,7 +60,7 @@ Características:
 
 - Campo de usuario (Cédula): Un campo de texto para que el cliente ingrese su número de cédula.
 - Campo de contraseña: Un campo de texto para que el cliente ingrese su contraseña.
-- Botón de Ingresar: Al presionarlo, la aplicación verifica las credenciales contra la base de datos.
+- Botón de Ingresar: Al presionarlo, la aplicación verifica las credenciales contra la base de datos y le envia al aparatdo del (form10: Ingreso al Catalogo).
 - Botón de Registrar: Permite al cliente acceder al formulario de registro (form4) para crear una nueva cuenta.
 - Botón de Regresar: Permite al usuario volver al formulario de inicio (form1)
 
@@ -132,7 +132,7 @@ En esta ventana se proporciona un formulario que permite a los administradores i
 Características:
 
 - Campo de Texto para ID: Permite ingresar el ID del producto que se desea eliminar.
-- Botón "ELIMINAR": Ejecuta la acción de eliminar el producto con el ID especificado.
+- Botón "ELIMINAR": Ejecuta la acción de eliminar el producto con el ID.
 - Botón "REGRESAR": Vuelve al menú principal de administrador (form5).
 - Etiqueta Mensaje: Muestra mensajes de éxito o error relacionados con la eliminación del producto.
 
@@ -147,7 +147,7 @@ En esta ventana se proporciona un formulario que permite a los administradores i
 Características:
 
 - Campo de Texto para ID: Permite ingresar el ID del producto que se desea buscar.
-- Botón "BUSCAR": Ejecuta la acción de buscar el producto con el ID especificado.
+- Botón "BUSCAR": Ejecuta la acción de buscar el producto con el ID.
 - Botón "REGRESAR": Vuelve al menú principal de administrador (form5).
 - Etiquetas para mostrar información: Muestra el nombre, el precio y el stock del producto encontrado.
 - Etiqueta Mensaje: Muestra mensajes relacionados con la búsqueda del producto, como éxito o error.
@@ -157,6 +157,111 @@ Características:
 ![image](https://github.com/user-attachments/assets/d5f8bccf-0e64-479e-ba8e-a09f16ab2dfb)
 
 - ## Form14 (Actualizar Stock de un Producto):
+
+En esta ventana se proporciona un formulario que permite a los administradores ingresar el ID del producto y el nuevo stock para actualizar la cantidad disponible en la base de datos.
+
+Características:
+
+- Campo de Texto para ID: Permite ingresar el ID del producto cuyo stock se desea actualizar.
+- Campo de Texto para Stock: Permite ingresar el nuevo stock del producto.
+- Botón "ACTUALIZAR": Ejecuta la acción de actualizar el stock del producto con el ID.
+- Botón "REGRESAR": Regresa al menú principal de administrador (form5).
+- Etiquetas de Mensaje: Muestran mensajes de estado, incluyendo éxito o error durante la actualización del stock.
+
+![image](https://github.com/user-attachments/assets/c9b38708-cb06-4602-a3f1-d10be353374e)
+![image](https://github.com/user-attachments/assets/314edd19-04a8-4fd6-adea-f3b7cf3b2744)
+![image](https://github.com/user-attachments/assets/c8eb2db3-19e1-4fc7-a596-4b783612de40)
+![image](https://github.com/user-attachments/assets/a1eb83a8-4029-4b1a-8d2a-92bbc6f9cbf7)
+
+- ## Form10 (Ingreso al Catalogo):
+
+Esta ventana permite a los usuarios ingresar al catálogo de productos de la tienday  la opción de regresar al formulario anterior (form3).
+
+Características:
+
+- Botón "INGRESAR": Abre el catálogo de productos (form9: Catalogo) y llama al método fetchProductData para cargar los datos del catálogo.
+- Botón "REGRESAR": Regresa al formulario anterior (form3).
+- Catalogo: Instancia de form9, utilizada para mostrar el catálogo de productos.
+
+![image](https://github.com/user-attachments/assets/5b159321-6df9-435d-a40c-efb9c4786a08)
+![image](https://github.com/user-attachments/assets/2f674bd6-1a36-4133-9038-5425eda83793)
+
+- ## Form9 (Catalogo):
+
+Se presenta una ventana con una tabla que lista los productos del catálogo. Cada fila de la tabla incluye detalles del producto, una imagen y un botón para comprar el producto.
+
+Características:
+
+- Tabla de Productos: Muestra información sobre los productos, incluyendo stock, nombre, precio, imagen y un botón de comprar.
+- Botón "Ver Carrito": Abre el formulario del carrito de compras (form12).
+- Botón "Regresar": Regresa al formulario anterior (form10).
+
+![image](https://github.com/user-attachments/assets/84495ccc-18d5-4902-bedf-2514010b609f)
+![image](https://github.com/user-attachments/assets/53e62ef4-1241-4b80-b3f4-fccacc6bd4fb)
+![image](https://github.com/user-attachments/assets/20945e9e-3485-40b6-a2d0-4ac8d5b67991)
+![image](https://github.com/user-attachments/assets/c601ddba-9af2-4fdd-a5a5-ffc7f2a2b448)
+![image](https://github.com/user-attachments/assets/5b8ec392-ae7f-40f5-a075-2514e0712aa2)
+![image](https://github.com/user-attachments/assets/a30de2c5-a816-48bd-b97d-e39a6ff5abd4)
+![image](https://github.com/user-attachments/assets/c819bca4-d75e-43b2-90d6-e3df1289c64d)
+![image](https://github.com/user-attachments/assets/08e77f52-29e2-4818-9d3b-223149c5aaf9)
+![image](https://github.com/user-attachments/assets/fbfb19e7-d202-44d0-9983-e52c13649e88)
+
+- ## Form11 (Añadir al Carrito):
+
+Este modal se utiliza para ingresar la cantidad de un producto que se desea añadir al carrito. También genera un archivo PDF con los detalles de la compra cuando se confirma la selección del producto.
+
+Características:
+
+- Detalles del Producto: Muestra el nombre del producto, stock disponible y permite ingresar la cantidad deseada.
+- Botón "Añadir": Añade el producto al carrito y genera un PDF con la factura de la compra.
+- Botón "Cancelar": Cierra el diálogo sin realizar ninguna acción.
+
+![image](https://github.com/user-attachments/assets/7220b61f-9d07-4911-8d0d-8e83adca5b70)
+![image](https://github.com/user-attachments/assets/f6dd3076-780b-45f5-b602-63eb4e31361a)
+![image](https://github.com/user-attachments/assets/f6e7cd4b-7d9e-4c6d-98dd-8a351a873c3d)
+![image](https://github.com/user-attachments/assets/b2015ff2-75be-4a6f-85b7-30832bb8c662)
+![image](https://github.com/user-attachments/assets/e8ee1170-86bc-4861-8705-81ab5c9e87a8)
+![image](https://github.com/user-attachments/assets/7a881c8d-3233-4482-a65e-e1d2562d66e8)
+![image](https://github.com/user-attachments/assets/cbd4f11d-4c53-4902-bf59-f72a8a3d29bb)
+
+- ## Form 12 (Mostrar el Carrito):
+
+Este modal muestra una tabla con los ítems del carrito de compras y con botones para comprar los ítems o cancelar la acción.
+
+Características:
+
+- Tabla de Carrito: Muestra los productos añadidos al carrito con sus respectivas cantidades.
+- Botón "Comprar": Procesa la compra, actualiza el stock de los productos en la base de datos y limpia el carrito.
+- Botón "Cancelar": Cierra el apartado sin realizar ninguna acción.
+
+![image](https://github.com/user-attachments/assets/5a693521-b86e-4e75-aefc-00fb3c65d62e)
+![image](https://github.com/user-attachments/assets/a866db35-d18e-4b6b-b66b-b08275cfeb21)
+![image](https://github.com/user-attachments/assets/257ace3a-56dc-4307-9ab6-ce9398c3e9a6)
+![image](https://github.com/user-attachments/assets/0b75c067-5fa3-4b48-a91d-cee1bd0a6d43)
+![image](https://github.com/user-attachments/assets/c34cf97a-837c-485e-b415-f8fd5ea9dcc6)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
