@@ -240,31 +240,18 @@ Características:
 ![image](https://github.com/user-attachments/assets/0b75c067-5fa3-4b48-a91d-cee1bd0a6d43)
 ![image](https://github.com/user-attachments/assets/c34cf97a-837c-485e-b415-f8fd5ea9dcc6)
 
+- ## Form 13 (Gestionar Items Carrito):
 
+Su función es gestionar los ítems del carrito de compras y sus detalles. Utiliza el patrón Singleton para asegurar que solo exista una instancia de la clase en la aplicación.
 
+Características:
 
+- Instancia Única: Utiliza el patrón Singleton para mantener una única instancia en toda la aplicación.
+- Gestión de Ítems: Permite añadir ítems al carrito, consultar los ítems actuales y limpiar el carrito.
+- Datos de Productos: Almacena la cantidad y el precio de cada producto en el carrito.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/59776e45-843d-4f15-a2aa-75add5692f33)
+![image](https://github.com/user-attachments/assets/f10acfa8-de10-4675-bc40-e8e2187925b1)
+![image](https://github.com/user-attachments/assets/3c03ec99-afd2-408c-b87d-693c54f3d79f)
+![image](https://github.com/user-attachments/assets/4fdb063e-daaf-4d4d-aadf-a54730514a1c)
+![image](https://github.com/user-attachments/assets/66a5fc49-0cbe-4386-81c5-17acad59871a)
