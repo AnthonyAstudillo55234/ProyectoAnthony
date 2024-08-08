@@ -75,9 +75,9 @@ public class form6 extends JFrame {
                 // Crea un objeto producto con los datos ingresados
                 productos produc = new productos(id.getText(), nombre.getText(), pr, stock_produc);
                 // Conexión a la base de datos
-                String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10723680";
-                String username = "sql10723680";
-                String password = "uNjR5yDxj2";
+                String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10724628";
+                String username = "sql10724628";
+                String password = "7NShjCC9Ev";
                 String query = "insert into zapatos (id_producto, nombre, precio, stock, image_path) values(?,?,?,?,?)";
                 try (Connection con = DriverManager.getConnection(url, username, password)) {
                     PreparedStatement ps = con.prepareStatement(query);
@@ -130,4 +130,3 @@ public class form6 extends JFrame {
         });
     }
 }
-

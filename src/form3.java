@@ -28,9 +28,9 @@ public class form3 extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Configuración de la conexión a la base de datos
-                String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10723680";
-                String username = "sql10723680";
-                String password = "uNjR5yDxj2";
+                String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10724628";
+                String username = "sql10724628";
+                String password = "7NShjCC9Ev";
                 Connection conn = null;
                 PreparedStatement ps = null;
                 // Consulta SQL para verificar las credenciales del cliente

@@ -103,9 +103,9 @@ public class form9 extends JFrame {
 
     // Método para obtener los datos de productos de la base de datos y mostrarlos en la tabla
     public void fetchProductData() {
-        String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10723680"; // URL de la base de datos
-        String username = "sql10723680"; // Usuario de la base de datos
-        String password = "uNjR5yDxj2"; // Contraseña de la base de datos
+        String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10724628"; // URL de la base de datos
+        String username = "sql10724628"; // Usuario de la base de datos
+        String password = "7NShjCC9Ev"; // Contraseña de la base de datos
         String query = "SELECT stock, nombre, precio, image_path FROM zapatos"; // Consulta SQL
 
         try (Connection con = DriverManager.getConnection(url, username, password)) {

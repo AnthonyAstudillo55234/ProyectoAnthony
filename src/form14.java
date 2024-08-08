@@ -36,9 +36,9 @@ public class form14 extends JFrame {
                     return;
                 }
                 // Conexión a la base de datos
-                String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10723680";
-                String user = "sql10723680";
-                String password = "uNjR5yDxj2";
+                String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10724628";
+                String user = "sql10724628";
+                String password = "7NShjCC9Ev";
                 Connection con = null;
                 PreparedStatement ps = null;
                 try {

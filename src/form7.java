@@ -33,9 +33,9 @@ public class form7 extends JFrame {
                     return;
                 }
                 // Configuración de la conexión a la base de datos
-                String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10723680";
-                String username = "sql10723680";
-                String password = "uNjR5yDxj2";
+                String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10724628";
+                String username = "sql10724628";
+                String password = "7NShjCC9Ev";
                 String query ="delete from zapatos where id_producto = ?"; // Consulta SQL para eliminar un producto por ID
                 try (Connection con = DriverManager.getConnection(url, username, password)) {
                     // Preparación de la consulta

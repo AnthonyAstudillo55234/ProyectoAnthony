@@ -97,9 +97,9 @@ public class form12 extends JDialog {
 
     // Método para realizar la compra
     private void realizarCompra() {
-        String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10723680";
-        String username = "sql10723680";
-        String password = "uNjR5yDxj2";
+        String url = "jdbc:mysql://sql10.freemysqlhosting.net/sql10724628";
+        String username = "sql10724628";
+        String password = "7NShjCC9Ev";
 
         try (Connection con = DriverManager.getConnection(url, username, password)) {
             // Actualizar el stock de cada ítem en la base de datos
